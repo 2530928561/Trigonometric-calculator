@@ -1,0 +1,122 @@
+def my_abs(num):
+    返回一个数的绝对值。
+    参数:
+    num (float): 要求绝对值的数。
+    返回:
+    float: 输入数的绝对值。
+
+def factorial(n):
+    计算一个非负整数的阶乘。
+    参数:
+    n (int): 要计算阶乘的非负整数。
+    返回:
+    float: 输入整数的阶乘值。
+
+def power(x, n):
+    计算一个数的整数次幂。
+    参数:
+    x (float): 底数。
+    n (int): 幂。
+    返回:
+    float: 底数的幂值。
+
+def input_angle(x):
+    输入一个角度（以度为单位）并将其转换为弧度。
+    参数：
+    x:角度值
+    返回:
+    float: 角度的弧度值。
+
+def my_arcsin(x, n):
+    使用泰勒级数逼近计算 x 的 arcsin。
+    参数:
+    x (float): 要计算 arcsin 的值。
+    n (int): 在泰勒级数中要使用的项数。
+    返回:
+    float: x 的 arcsin，使用 n 项泰勒级数计算得到。
+
+def my_arccos(x, n):
+    使用泰勒级数逼近计算 x 的 arccos。
+    参数:
+    x (float): 要计算 arccos 的值。
+    n (int): 在泰勒级数中要使用的项数。
+    返回:
+    float: x 的 arccos，使用 n 项泰勒级数计算得到。
+
+def my_arctan(x, n):
+    使用泰勒级数逼近计算 x 的 arctan。
+    参数:
+    x (float): 要计算 arctan 的值。
+    n (int): 在泰勒级数中要使用的项数。
+    返回:
+    float: x 的 arctan，使用 n 项泰勒级数计算得到。
+
+def my_sin(num2):
+    使用泰勒展开计算角度的正弦值。
+    参数:
+    num2 (float): 弧度表示的角度。
+    返回:
+    float: 输入角度的正弦值。
+
+def my_cos(x):
+    使用泰勒展开计算角度的余弦值。
+    参数:
+    x (float): 弧度表示的角度。
+    返回:
+    float: 输入角度的余弦值。
+
+def my_tan(x):
+    使用正弦和余弦计算角度的正切值。
+    参数:
+    x (float): 弧度表示的角度。
+    返回:
+    float: 输入角度的正切值。
+
+def my_cot(x):
+    使用正切计算角度的余切值。
+    参数:
+    x (float): 弧度表示的角度。
+    返回:
+    float: 输入角度的余切值。
+
+def add(num1, num2):
+    计算两个数的和。
+    参数:
+    num1 (float): 第一个加数。
+    num2 (float): 第二个加数。
+    返回:
+    float: 两个数的和。
+
+def minus(num1, num2):
+    计算两个数的差。
+    参数:
+    num1 (float): 被减数。
+    num2 (float): 减数。
+    返回:
+    float: 两个数的差。
+
+def ride(num1, num2):
+    计算两个数的乘积。
+    参数:
+    num1 (float): 第一个乘数。
+    num2 (float): 第二个乘数。
+    返回:
+    float: 两个数的乘积。
+
+def rid(num1, num2):
+    计算两个数的商。
+    参数:
+    num1 (float): 被除数。
+    num2 (float): 除数。
+    返回:
+    int: 两个数的商。
+
+def yu(num1, num2):
+    计算两个数的取模结果。
+    参数:
+    num1 (float): 被取模数。
+    num2 (float): 取模数。
+    返回:
+    int: 两个数的取模结果。
+
+
