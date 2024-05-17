@@ -1,5 +1,5 @@
 function varargout = tra_cal_1(varargin)
-% python°æ±¾Îª3.8£¬matlab°æ±¾2023£¬±àÂëÎªutf-8
+% pythonç‰ˆæœ¬ä¸º3.8ï¼Œmatlabç‰ˆæœ¬2023ï¼Œç¼–ç ä¸ºutf-8
 % TRA_CAL_1 MATLAB code for tra_cal_1.fig
 %      TRA_CAL_1, by itself, creates a new TRA_CAL_1 or raises the existing
 %      singleton*.
@@ -83,47 +83,47 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 value = get(handles.popupmenu1,'value');
 switch value
-    % ¼ÆËãÕıÏÒº¯Êı
+    % è®¡ç®—æ­£å¼¦å‡½æ•°
     case 2
         textString = get(handles.edit1,'String');
         textint =str2double(textString);
         %fprintf("%2f",rad);
         if isempty(str2num(textString))
-            textString1='ÊäÈëµÄ²»ÊÇ½Ç¶È';
+            textString1='è¾“å…¥çš„ä¸æ˜¯è§’åº¦';
              set(handles.edit3,'String',textString1);
-        % ¼ÆËãÕıÏÒÖµ
+        % è®¡ç®—æ­£å¼¦å€¼
         else 
             pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
             project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
-            insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%Ìí¼Ó°üµÄÂ·¾¶ÔÚmatlabÖĞ
+            insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%æ·»åŠ åŒ…çš„è·¯å¾„åœ¨matlabä¸­
             functions_path = fullfile(project_path, 'function');
             insert(py.sys.path, int32(0), functions_path);
-            mysin= py.importlib.import_module('trigonomtric');  % ²»Òª´øpyºó×º,²»È»±¨´í
+            mysin= py.importlib.import_module('trigonomtric');  % ä¸è¦å¸¦pyåç¼€,ä¸ç„¶æŠ¥é”™
             sin_value = mysin.my_sin(textint);
             sin_string =num2str(sin_value);
             textString1 = ['sin',textString,'=',sin_string];
-            set(handles.edit3,'String',textString1);% ½«¼ÆËã½á¹ûĞ´ÈëÎÄ±¾¿ò
+            set(handles.edit3,'String',textString1);% å°†è®¡ç®—ç»“æœå†™å…¥æ–‡æœ¬æ¡†
         end
-    % ¼ÆËã·´ÕıÏÒº¯Êı
+    % è®¡ç®—åæ­£å¼¦å‡½æ•°
     case 3
-         % ¹¹½¨·´ÕıÏÒº¯ÊıÔÚx=0´¦µÄÌ©ÀÕ¼¶Êı
+         % æ„å»ºåæ­£å¼¦å‡½æ•°åœ¨x=0å¤„çš„æ³°å‹’çº§æ•°
        textString = get(handles.edit1,'String');
        textint =str2double(textString);
        if abs(textint)>1
-          textString1='ÊäÈëµÄÖµ³¬³ö·¶Î§';
+          textString1='è¾“å…¥çš„å€¼è¶…å‡ºèŒƒå›´';
           set(handles.edit3,'String',textString1);  
        else 
            pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
            project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
-           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%Ìí¼Ó°üµÄÂ·¾¶ÔÚmatlabÖĞ
+           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%æ·»åŠ åŒ…çš„è·¯å¾„åœ¨matlabä¸­
            functions_path = fullfile(project_path, 'function');
            insert(py.sys.path, int32(0), functions_path);
-           py.sys.path %¼ì²éÏÖÔÚmatlabÄÜÕÒµ½µÄÂ·¾¶¶¼ÓĞË­
-           myarcsin= py.importlib.import_module('anti_trigonomtric');  % ²»Òª´øpyºó×º,²»È»±¨´í
+           py.sys.path %æ£€æŸ¥ç°åœ¨matlabèƒ½æ‰¾åˆ°çš„è·¯å¾„éƒ½æœ‰è°
+           myarcsin= py.importlib.import_module('anti_trigonomtric');  % ä¸è¦å¸¦pyåç¼€,ä¸ç„¶æŠ¥é”™
            arcsin_value = myarcsin.my_arcsin(textint);
            arcsin_string = num2str(arcsin_value);
            textString1 = ['Arcsin',textString,'=',arcsin_string];
-           set(handles.edit3,'String',textString1); % ½«¼ÆËã½á¹ûĞ´ÈëÎÄ±¾¿ò
+           set(handles.edit3,'String',textString1); % å°†è®¡ç®—ç»“æœå†™å…¥æ–‡æœ¬æ¡†
        end
         
 end
@@ -137,26 +137,26 @@ function popupmenu1_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns popupmenu1 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from popupmenu1
-% »ñÈ¡ÏÂÀ­²Ëµ¥µÄÖµ
+% è·å–ä¸‹æ‹‰èœå•çš„å€¼
 value = get(handles.popupmenu1,'value');
 switch value
     case 1
-        text_in = 'ÇëÑ¡Ôñ¼ÆËãÀàĞÍ';
+        text_in = 'è¯·é€‰æ‹©è®¡ç®—ç±»å‹';
         type_cal = 1;
     case 2
-        text_in = 'ÇëÊäÈë½Ç¶È';
-        text_act1 = '¼ÆËãÕıÏÒÖµ';
-        text_act2 = '¼ÆËãÓàÏÒÖµ';
-        text_act3 = '¼ÆËãÕıÇĞÖµ';
+        text_in = 'è¯·è¾“å…¥è§’åº¦';
+        text_act1 = 'è®¡ç®—æ­£å¼¦å€¼';
+        text_act2 = 'è®¡ç®—ä½™å¼¦å€¼';
+        text_act3 = 'è®¡ç®—æ­£åˆ‡å€¼';
         type_cal = 2;
     case 3
-        text_in = 'ÇëÊäÈëÊıÖµ';
-        text_act1 = '¼ÆËã·´ÕıÏÒÖµ';
-        text_act2 = '¼ÆËã·´ÓàÏÒÖµ';
-        text_act3 = '¼ÆËã·´ÕıÇĞÖµ';
+        text_in = 'è¯·è¾“å…¥æ•°å€¼';
+        text_act1 = 'è®¡ç®—åæ­£å¼¦å€¼';
+        text_act2 = 'è®¡ç®—åä½™å¼¦å€¼';
+        text_act3 = 'è®¡ç®—åæ­£åˆ‡å€¼';
         type_cal = 3;
 end
-% ÉèÖÃµ½¾²Ì¬ÎÄ±¾¿òÖĞ
+% è®¾ç½®åˆ°é™æ€æ–‡æœ¬æ¡†ä¸­
 set(handles.text4,'String',text_in);
 set(handles.pushbutton1,'String',text_act1);
 set(handles.pushbutton3,'String',text_act2);
@@ -262,41 +262,41 @@ switch value
        textString = get(handles.edit1,'String');
        textint =str2double(textString);
        if isempty(str2num(textString))
-           textString1='ÊäÈëµÄ²»ÊÇ½Ç¶È';
+           textString1='è¾“å…¥çš„ä¸æ˜¯è§’åº¦';
            set(handles.edit3,'String',textString1);
        else
            pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
            project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
-           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%Ìí¼Ó°üµÄÂ·¾¶ÔÚmatlabÖĞ
+           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%æ·»åŠ åŒ…çš„è·¯å¾„åœ¨matlabä¸­
            functions_path = fullfile(project_path, 'function');
            insert(py.sys.path, int32(0), functions_path);
-           mycos= py.importlib.import_module('trigonomtric');  % ²»Òª´øpyºó×º,²»È»±¨´í
+           mycos= py.importlib.import_module('trigonomtric');  % ä¸è¦å¸¦pyåç¼€,ä¸ç„¶æŠ¥é”™
            cos_value = mycos.my_cos(textint);
            cos_string =num2str(cos_value);
            textString1 = ['cos',textString,'=',cos_string];
-           set(handles.edit3,'String',textString1); % ½«¼ÆËã½á¹ûĞ´ÈëÎÄ±¾¿ò
+           set(handles.edit3,'String',textString1); % å°†è®¡ç®—ç»“æœå†™å…¥æ–‡æœ¬æ¡†
        end
     case 3
-         % ¹¹½¨·´ÕıÏÒº¯ÊıÔÚx=0´¦µÄÌ©ÀÕ¼¶Êı
+         % æ„å»ºåæ­£å¼¦å‡½æ•°åœ¨x=0å¤„çš„æ³°å‹’çº§æ•°
        textString = get(handles.edit1,'String');
        textint =str2double(textString);
        n_terms = 50;
        unit = 100;
        if abs(textint)>1
-          textString1='ÊäÈëµÄÖµ³¬³ö·¶Î§';
+          textString1='è¾“å…¥çš„å€¼è¶…å‡ºèŒƒå›´';
           set(handles.edit3,'String',textString1);  
        else 
            pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
            project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
-           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%Ìí¼Ó°üµÄÂ·¾¶ÔÚmatlabÖĞ
+           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%æ·»åŠ åŒ…çš„è·¯å¾„åœ¨matlabä¸­
            functions_path = fullfile(project_path, 'function');
            insert(py.sys.path, int32(0), functions_path);
-           py.sys.path %¼ì²éÏÖÔÚmatlabÄÜÕÒµ½µÄÂ·¾¶¶¼ÓĞË­
-           myarcsin= py.importlib.import_module('anti_trigonomtric');  % ²»Òª´øpyºó×º,²»È»±¨´í
+           py.sys.path %æ£€æŸ¥ç°åœ¨matlabèƒ½æ‰¾åˆ°çš„è·¯å¾„éƒ½æœ‰è°
+           myarcsin= py.importlib.import_module('anti_trigonomtric');  % ä¸è¦å¸¦pyåç¼€,ä¸ç„¶æŠ¥é”™
            arccos_value = myarcsin.my_arccos(textint);
            arccos_string = num2str(arccos_value);
            textString1 = ['Arccos',textString,'=',arccos_string];
-           set(handles.edit3,'String',textString1); % ½«¼ÆËã½á¹ûĞ´ÈëÎÄ±¾¿ò
+           set(handles.edit3,'String',textString1); % å°†è®¡ç®—ç»“æœå†™å…¥æ–‡æœ¬æ¡†
       end
       
  end
@@ -310,47 +310,47 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 value = get(handles.popupmenu1,'value');
 switch value
-    % ¼ÆËãÕıÏÒº¯Êı
+    % è®¡ç®—æ­£å¼¦å‡½æ•°
     case 2
         textString = get(handles.edit1,'String');
         textint =str2double(textString);
         %fprintf("%2f",rad);
         if isempty(str2num(textString))
-            textString1='ÊäÈëµÄ²»ÊÇ»¡¶È';
+            textString1='è¾“å…¥çš„ä¸æ˜¯å¼§åº¦';
              set(handles.edit3,'String',textString1);
-        % ¼ÆËãÕıÏÒÖµ
+        % è®¡ç®—æ­£å¼¦å€¼
         else 
             pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
             project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
-            insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%Ìí¼Ó°üµÄÂ·¾¶ÔÚmatlabÖĞ
+            insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%æ·»åŠ åŒ…çš„è·¯å¾„åœ¨matlabä¸­
             functions_path = fullfile(project_path, 'function');
             insert(py.sys.path, int32(0), functions_path);
-            mytan= py.importlib.import_module('trigonomtric');  % ²»Òª´øpyºó×º,²»È»±¨´í
+            mytan= py.importlib.import_module('trigonomtric');  % ä¸è¦å¸¦pyåç¼€,ä¸ç„¶æŠ¥é”™
             tan_value = mytan.my_tan(textint);
             tan_string =num2str(tan_value);
             textString1 = ['tan',textString,'=',tan_string];
-            set(handles.edit3,'String',textString1);% ½«¼ÆËã½á¹ûĞ´ÈëÎÄ±¾¿ò
+            set(handles.edit3,'String',textString1);% å°†è®¡ç®—ç»“æœå†™å…¥æ–‡æœ¬æ¡†
         end
-    % ¼ÆËã·´ÕıÏÒº¯Êı
+    % è®¡ç®—åæ­£å¼¦å‡½æ•°
     case 3
-         % ¹¹½¨·´ÕıÏÒº¯ÊıÔÚx=0´¦µÄÌ©ÀÕ¼¶Êı
+         % æ„å»ºåæ­£å¼¦å‡½æ•°åœ¨x=0å¤„çš„æ³°å‹’çº§æ•°
        textString = get(handles.edit1,'String');
        textint =str2double(textString);
        if abs(textint)>1
-          textString1='ÊäÈëµÄÖµ³¬³ö·¶Î§';
+          textString1='è¾“å…¥çš„å€¼è¶…å‡ºèŒƒå›´';
           set(handles.edit3,'String',textString1);  
        else 
            pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
            project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
-           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%Ìí¼Ó°üµÄÂ·¾¶ÔÚmatlabÖĞ
+           insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%æ·»åŠ åŒ…çš„è·¯å¾„åœ¨matlabä¸­
            functions_path = fullfile(project_path, 'function');
            insert(py.sys.path, int32(0), functions_path);
-           py.sys.path %¼ì²éÏÖÔÚmatlabÄÜÕÒµ½µÄÂ·¾¶¶¼ÓĞË­
-           myarctan= py.importlib.import_module('anti_trigonomtric');  % ²»Òª´øpyºó×º,²»È»±¨´í
-           arctan_value = myarctan.my_arcsin(textint);
+           py.sys.path %æ£€æŸ¥ç°åœ¨matlabèƒ½æ‰¾åˆ°çš„è·¯å¾„éƒ½æœ‰è°
+           myarctan= py.importlib.import_module('anti_trigonomtric');  % ä¸è¦å¸¦pyåç¼€,ä¸ç„¶æŠ¥é”™
+           arctan_value = myarctan.my_arctan(textint);
            arctan_string = num2str(arctan_value);
            textString1 = ['Arcsin',textString,'=',arctan_string];
-           set(handles.edit3,'String',textString1); % ½«¼ÆËã½á¹ûĞ´ÈëÎÄ±¾¿ò
+           set(handles.edit3,'String',textString1); % å°†è®¡ç®—ç»“æœå†™å…¥æ–‡æœ¬æ¡†
        end
         
 end
