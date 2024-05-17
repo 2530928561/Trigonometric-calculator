@@ -1,5 +1,8 @@
 function varargout = tra_cal_1(varargin)
-% python版本为3.8，matlab版本2023，编码为utf-8，涉及地址问题
+% python版本为3.8，matlab版本2023，编码为utf-8，涉及地址问题,使用时需要修改地址,配置需要的python环境，修改pushbutton以下地址
+%pyenv('Version','D:\Anaconda\envs\mcs\python.exe');
+%project_path ='C:\Users\tongjiang\Desktop\gui\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\';
+%insert(py.sys.path, int32(0), 'C:\Users\tongjiang\Desktop\Trigonometric-calculator-main\Trigonometric-calculator-main\final_version\function')%添加包的路径在matlab中
 % TRA_CAL_1 MATLAB code for tra_cal_1.fig
 %      TRA_CAL_1, by itself, creates a new TRA_CAL_1 or raises the existing
 %      singleton*.
