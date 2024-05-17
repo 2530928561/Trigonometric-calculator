@@ -144,7 +144,7 @@ switch value
         text_in = '请选择计算类型';
         type_cal = 1;
     case 2
-        text_in = '请输入角度';
+        text_in = '请输入弧度';
         text_act1 = '计算正弦值';
         text_act2 = '计算余弦值';
         text_act3 = '计算正切值';
